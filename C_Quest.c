@@ -60,7 +60,7 @@
 //    - Expected Output: `true`
 
 // #include <stdio.h>
-// int main(){
+// int main4(){
 //     int num;
 //     printf("Enter the number: ");
 //     scanf("%d",&num);
@@ -77,15 +77,15 @@
 
 // #include <stdio.h>
 // int main(){
-//     int num;
-//     int i;
-//     int factorial=1;
+//     int num, factorial=1,i;
+
 //     printf("Enter the number: ");
 //     scanf("%d",&num);
 //     for(i=1;i<=num;i++){
 //         factorial=i*factorial;
 //     }
 //     printf("%d \n", factorial);
+//     return 0;
 // }
 
 // 6. **Reverse a String**  
@@ -94,18 +94,23 @@
 //    - Expected Output: `'olleh'`
 
 // #include <stdio.h>
-// #include <string.h>
-// int main(){
-//     int i;
-//     char reverse[6];
-//     char string[6]="hello";
-//         for (i = 0; i < strlen(string); i++) {
-//         reverse[i] = string[strlen(string) - 1 - i];
+// #include <string.h> 
 
-//     }reverse[i] = '\0';
-//         printf("%s\n",reverse);
+// int main() {
+//     int i;
+//     char reverse[6], string[6] = "hello";
+
+//     int length = strlen(string);
+//     for (i = 0; i < length; i++) {
+//         reverse[i] = string[length - 1 - i];
+//     }
+//     reverse[i] = '\0';
+
+//     printf("Reversed String: %s\n", reverse);
+
 //     return 0;
 // }
+
 
 // 7. **Check for Palindrome**  
 //    - Task: Write a function that checks if a given string is a palindrome.  
@@ -158,7 +163,7 @@
 
 // #include <stdio.h>
 // int main() {
-//     int arr[] = {3, 1, 4, 1, 5};
+//     int arr[5] = {3, 1, 4, 1, 5};
 //     int i, j;
 //     int temp;
 //     int length = sizeof(arr) / sizeof(arr[0]);
@@ -330,42 +335,42 @@
 //     - Test: `removeDuplicates([1, 2, 2, 3, 4, 4, 5])`  
 //     - Expected Output: `[1, 2, 3, 4, 5]`
 
-#include <stdio.h>
+// #include <stdio.h>
 
-int main() {
-    int arr[] = {1, 2, 3, 2, 4, 1, 5};
-    int size = sizeof(arr) / sizeof(arr[0]);
-    int i, j, k;
+// int main() {
+//     int arr[] = {1, 2, 3, 2, 4, 1, 5};
+//     int size = sizeof(arr) / sizeof(arr[0]);
+//     int i, j, k;
 
-    printf("Original array: ");
-    for (i = 0; i < size; i++) {
-        printf("%d ", arr[i]);
-    }
-    printf("\n");
+//     printf("Original array: ");
+//     for (i = 0; i < size; i++) {
+//         printf("%d ", arr[i]);
+//     }
+//     printf("\n");
 
-    // Remove duplicates
-    for (i = 0; i < size; i++) {
-        // Check if the current element is a duplicate
-        for (j = i + 1; j < size; j++) {
-            if (arr[i] == arr[j]) {
-                // Shift elements to remove the duplicate
-                for (k = j; k < size - 1; k++) {
-                    arr[k] = arr[k + 1];
-                }
-                size--;  // Decrease the size of the array
-                j--;  // Check the new element at index j
-            }
-        }
-    }
+//     // Remove duplicates
+//     for (i = 0; i < size; i++) {
+//         // Check if the current element is a duplicate
+//         for (j = i + 1; j < size; j++) {
+//             if (arr[i] == arr[j]) {
+//                 // Shift elements to remove the duplicate
+//                 for (k = j; k < size - 1; k++) {
+//                     arr[k] = arr[k + 1];
+//                 }
+//                 size--;  // Decrease the size of the array
+//                 j--;  // Check the new element at index j
+//             }
+//         }
+//     }
 
-    printf("Array after removing duplicates: ");
-    for (i = 0; i < size; i++) {
-        printf("%d ", arr[i]);
-    }
-    printf("\n");
+//     printf("Array after removing duplicates: ");
+//     for (i = 0; i < size; i++) {
+//         printf("%d ", arr[i]);
+//     }
+//     printf("\n");
 
-    return 0;
-}
+//     return 0;
+// }
 
 
 
@@ -373,36 +378,36 @@ int main() {
 //     - Task: Write a function that returns an array of the common elements in two arrays.  
 //     - Test: `findIntersection([1, 2, 3], [2, 3, 4])`  
 //     - Expected Output: `[2, 3]`
-#include <stdio.h>
+// #include <stdio.h>
 
-int main() {
-    int i, j;
-    int arr1[] = {1, 2, 3};
-    int arr2[] = {2, 3, 4};
-    int arr3[3];  
-    int index = 0;
+// int main() {
+//     int i, j;
+//     int arr1[] = {1, 2, 3};
+//     int arr2[] = {2, 3, 4};
+//     int arr3[3];  
+//     int index = 0;
     
-    int length1 = sizeof(arr1) / sizeof(arr1[0]);
-    int length2 = sizeof(arr2) / sizeof(arr2[0]);
+//     int length1 = sizeof(arr1) / sizeof(arr1[0]);
+//     int length2 = sizeof(arr2) / sizeof(arr2[0]);
     
-    for (i = 0; i < length1; i++) {
-        for (j = 0; j < length2; j++) {
-            if (arr1[i] == arr2[j]) {
-                arr3[index] = arr1[i];
-                index++;
-                break;  
-            }
-        }
-    }
+//     for (i = 0; i < length1; i++) {
+//         for (j = 0; j < length2; j++) {
+//             if (arr1[i] == arr2[j]) {
+//                 arr3[index] = arr1[i];
+//                 index++;
+//                 break;  
+//             }
+//         }
+//     }
     
-    printf("Intersection: ");
-    for (i = 0; i < index; i++) {
-        printf("%d ", arr3[i]);
-    }
-    printf("\n");
+//     printf("Intersection: ");
+//     for (i = 0; i < index; i++) {
+//         printf("%d ", arr3[i]);
+//     }
+//     printf("\n");
 
-    return 0;
-}
+//     return 0;
+// }
 
 // 18. **Check if Two Strings are Anagrams**  
 //     - Task: Write a function that checks if two strings are anagrams of each other.  
@@ -476,17 +481,14 @@ int main() {
 //     - Task: Write a function that capitalizes the first letter of each word in a string.  
 //     - Test: `capitalizeWords('hello world')`  
 //     - Expected Output: `'Hello World'`
-
-// Function to capitalize the first letter of each word in the string
+// #include <stdio.h>
+// #include <string.h>
+// #include <ctype.h> 
 // void capitalizeWords(char str[]) {
 //     int i = 0;
 
-//     // Process each character in the string
 //     while (str[i] != '\0') {
-//         // Check if the current character is the start of a word
-//         // A word starts at the beginning of the string or after a space
 //         if (i == 0 || str[i - 1] == ' ') {
-//             // Capitalize the character if it's a lowercase letter
 //             if (islower((unsigned char)str[i])) {
 //                 str[i] = toupper((unsigned char)str[i]);
 //             }
